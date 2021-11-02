@@ -1,0 +1,36 @@
+.form-container {
+    display: flex; 
+    justify-content: start;
+    flex-direction: column; 
+    width: 82px;
+}
+
+.user-Input {
+    display: flex; 
+    width: 125px;
+    margin-top: 15px;
+}
+
+.submit-Button {
+    margin-top: 15px; 
+    width: 50px;
+}
+
+.table-container {
+    font-family: arial, sans-serif; 
+    border-collapse: collapse; 
+    width: 15%; 
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.td-Container {
+    display: flex; 
+    flex-direction: row; 
+}
