@@ -19,7 +19,7 @@
 .table-container {
     font-family: arial, sans-serif; 
     border-collapse: collapse; 
-    width: 15%; 
+    width: 50%; 
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -30,7 +30,30 @@ td, th {
     padding: 8px;
 }
 
-.td-Container {
+.div-Points {
+    margin: 0 auto;
+    width: 150px;
     display: flex; 
-    flex-direction: row; 
+    gap: 2px;
+    justify-content: center;
 }
+
+.td-Container {
+    
+    width: 250px;
+}
+
+.div-RB {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.rebound-Container {
+    width: 150px;
+}
+
+.fieldGoal-Container {
+
+}
+
