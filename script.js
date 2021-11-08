@@ -237,7 +237,8 @@ function exportingToFile(tableData) {
     let link = document.getElementById("downloadLink"); 
     link.href = makeTextFile(data); 
     link.style.display = "block";
-
+    // Name: Jackerson James
+    // (350) 294-8775 <--- Potential Phone number of person who has my stolen phone 
     setTimeout(() => {
         link.style.display = "none"; 
     }, 7000); 

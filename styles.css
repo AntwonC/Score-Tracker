@@ -56,5 +56,10 @@ td, th {
     margin: 0 auto;
 }
 
+button {
+    -webkit-appearance: none;
+    border-radius: 0; 
+}
+
 
 
