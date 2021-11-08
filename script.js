@@ -228,7 +228,7 @@ function exportingToFile(tableData) {
             data += "\n\n";
             count = 0; 
         }
-        data += "[" + pData[i].textContent + "]" + "|";
+        data += "[" + pData[i].textContent + "] | ";
         console.log(`pData: ${pData[i].textContent}`);
         count++; 
         
@@ -238,7 +238,7 @@ function exportingToFile(tableData) {
     link.href = makeTextFile(data); 
     link.style.display = "block";
     // Name: Jackerson James
-    // (350) 294-8775 <--- Potential Phone number of person who has my stolen phone 
+    // (350)-294-8775 <--- Potential Phone number of person who has my stolen phone 
     setTimeout(() => {
         link.style.display = "none"; 
     }, 7000); 
