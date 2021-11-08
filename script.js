@@ -240,7 +240,7 @@ function exportingToFile(tableData) {
 
     setTimeout(() => {
         link.style.display = "none"; 
-    }, 3000); 
+    }, 7000); 
     /*for( let i in tableData.rows ) {
         let row = tableData.rows[i]; 
         console.log(`row: ${row.textContent}`);
