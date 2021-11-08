@@ -32,15 +32,10 @@ td, th {
 
 .div-Points {
     margin: 0 auto;
-    width: 150px;
+    width: 195px;
     display: flex; 
     gap: 2px;
     justify-content: center;
-}
-
-.td-Container {
-    
-    width: 250px;
 }
 
 .div-RB {
@@ -53,7 +48,13 @@ td, th {
     width: 150px;
 }
 
-.fieldGoal-Container {
-
+.div-FG {
+    display: flex; 
+    justify-content: center;
+    gap: 2px;
+    width: 150px;
+    margin: 0 auto;
 }
+
+
 

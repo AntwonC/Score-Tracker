@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Score Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script data-main="script.js" src="require.js" defer></script>
   </head>
   <body>
 
@@ -20,5 +20,8 @@
             <th>Rebounds</th>
             <th>Field Goal</th>
     </table> 
+
+    <button class="export-data">Export Data to Text File</button>
+    <a download="stats.txt" id="downloadLink" style="display: none">Download</a>
   </body>
 </html>
