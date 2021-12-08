@@ -44,6 +44,16 @@ td, th {
     gap: 2px;
 }
 
+.div-Assists {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.assist-Container {
+    width: 150px;
+}
+
 .rebound-Container {
     width: 150px;
 }

@@ -43,6 +43,19 @@ function addToTable(playerName) {
     const subtractOneRebound = document.createElement("button"); 
     subtractOneRebound.textContent = "-1"; 
      // REBOUNDS //
+
+     // ASSISTS //
+    const divAssistsContainer = document.createElement("div"); 
+    divAssistsContainer.classList.add("div-Assists"); 
+    const assistsContainer = document.createElement("td"); 
+    assistsContainer.classList.add("assist-Container"); 
+
+    const addOneAssist = document.createElement("button"); 
+    addOneAssist.textContent = "+1"; 
+    const subtractOneAssist = document.createElement("button"); 
+    subtractOneAssist.textContent = "-1"; 
+     // ASSISTS //
+
      // FIELD GOALS //
     const divFGContainer = document.createElement("div");
     divFGContainer.classList.add("div-FG");
@@ -58,6 +71,7 @@ function addToTable(playerName) {
     let pName = document.createElement("p");
     let tdPoints = document.createElement("p");
     let tdRebounds = document.createElement("p"); 
+    let tdAssists = document.createElement("p"); 
     let tdFieldGoals = document.createElement("p"); 
 
     if ( playerName.localeCompare("") === 0 ) {
@@ -66,6 +80,7 @@ function addToTable(playerName) {
         pName.textContent = playerName; 
         tdPoints.textContent = "0"; 
         tdRebounds.textContent = "0"; 
+        tdAssists.textContent = "0"; 
         tdFieldGoals.textContent = "0-0";
         // NAME //
         tdName.appendChild(pName);
@@ -81,27 +96,37 @@ function addToTable(playerName) {
         divPointsContainer.appendChild(addThreePoint);
         tdContainer.appendChild(divPointsContainer); 
         // POINTS //
+
         // REBOUNDS //
         divReboundContainer.appendChild(subtractOneRebound);
         divReboundContainer.appendChild(tdRebounds); 
         divReboundContainer.appendChild(addOneRebound);
         reboundContainer.appendChild(divReboundContainer); 
         // REBOUNDS //
+
+        // ASSISTS // 
+        divAssistsContainer.appendChild(subtractOneAssist);
+        divAssistsContainer.appendChild(tdAssists); 
+        divAssistsContainer.appendChild(addOneAssist); 
+        assistsContainer.appendChild(divAssistsContainer);
+        // ASSISTS //
+
         // FIELD GOALS //
-        divFGContainer.appendChild(madeFG); 
-        divFGContainer.appendChild(tdFieldGoals); 
         divFGContainer.appendChild(missedFG);
+        divFGContainer.appendChild(tdFieldGoals); 
+        divFGContainer.appendChild(madeFG); 
         fieldGoalContainer.appendChild(divFGContainer);
         // FIELD GOALS //
 
-       // tdContainer.appendChild(tdPoints); 
+      
         trElement.appendChild(tdName);
         trElement.appendChild(tdContainer);  
         trElement.appendChild(reboundContainer); 
+        trElement.appendChild(assistsContainer);
         trElement.appendChild(fieldGoalContainer);
         tableContainer.appendChild(trElement); 
         
-        //
+        
         addOnePoint.addEventListener("click", () => {
            let resValue = changeNumber(tdPoints.textContent, 1); 
            tdPoints.textContent = resValue;
@@ -151,6 +176,16 @@ function addToTable(playerName) {
         missedFG.addEventListener("click", () => {
             let resValue = updateFG(tdFieldGoals.textContent, false); 
             tdFieldGoals.textContent = resValue; 
+        });
+
+        addOneAssist.addEventListener("click", () => {
+            let resValue = changeNumber(tdAssists.textContent, +1);
+            tdAssists.textContent = resValue;
+        });
+
+        subtractOneAssist.addEventListener("click", () => {
+            let resValue = changeNumber(tdAssists.textContent, -1);
+            tdAssists.textContent = resValue;
         });
         return 1; 
     }
@@ -214,7 +249,7 @@ function exportingToFile(tableData) {
     };
     
     let pData = tableData.getElementsByTagName('p'); 
-    let data = "[Name] | [Points] | [Rebounds] | [Field Goal]\n\n";
+    let data = "[Name] | [Points] | [Rebounds] | [Assists] | [Field Goal]\n\n";
     let count = 0; 
 
     // Empty table, don't allow downloadable link
@@ -224,7 +259,7 @@ function exportingToFile(tableData) {
 
     for(let i = 0; i < pData.length; i++) {
 
-        if ( count === 4 ) {
+        if ( count === 5 ) {
             data += "\n\n";
             count = 0; 
         }
